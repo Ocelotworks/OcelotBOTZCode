@@ -29,3 +29,7 @@ Z5.props
 zork1.z5
 *.z5Save
 *.iml
+.idea/vcs.xml
+.idea/workspace.xml
+322032568558026753.z5Save
+out/production/OcelotZ5Kotlin/META-INF/OcelotZ5Kotlin.kotlin_module
