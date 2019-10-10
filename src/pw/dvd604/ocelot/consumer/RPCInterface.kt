@@ -64,7 +64,7 @@ class RPCInterface : ZUserInterface {
                 "",
                 it.properties.replyTo,
                 props,
-                "{\"name\":\"gameText\",\"text\":\"${EscapeUtils.encodeURIComponent(message)}\",\"loaded\":$printLoadHelp, \"players:\"${container.getPlayers()}}".toByteArray()
+                "{\"name\":\"gameText\",\"text\":\"${EscapeUtils.encodeURIComponent(message)}\",\"loaded\":$printLoadHelp, \"players\":${container.getPlayers()}}".toByteArray()
             );
             printLoadHelp = false
             buffer.clear()

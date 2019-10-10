@@ -17,7 +17,7 @@ val games = ArrayList<Game>(0)
 private var rabbitURL = ""
 private val timer = TimerThread()
 
-fun main() {
+fun main(args: Array<String>) {
     val props = Properties()
     val propsFile = File("Z5.props")
 
