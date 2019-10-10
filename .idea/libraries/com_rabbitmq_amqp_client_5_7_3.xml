@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="com.rabbitmq:amqp-client:5.7.3" type="repository">
+    <properties maven-id="com.rabbitmq:amqp-client:5.7.3" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/rabbitmq/amqp-client/5.7.3/amqp-client-5.7.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/amqp-client-5.7.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
