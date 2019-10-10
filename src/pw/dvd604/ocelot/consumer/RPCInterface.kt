@@ -2,6 +2,7 @@ package pw.dvd604.ocelot.consumer
 
 import com.rabbitmq.client.*
 import com.zaxsoft.zax.zmachine.ZUserInterface
+import org.json.simple.JSONObject
 import pw.dvd604.ocelot.util.EscapeUtils
 import java.awt.Dimension
 import java.awt.Point
@@ -11,6 +12,7 @@ import java.util.*
 
 class RPCInterface : ZUserInterface {
 
+    lateinit var container: Game
     var printLoadHelp: Boolean = false
     var loadGame: Boolean = false
     var text: String = ""
@@ -62,7 +64,7 @@ class RPCInterface : ZUserInterface {
                 "",
                 it.properties.replyTo,
                 props,
-                "{\"name\":\"gameText\",\"text\":\"${EscapeUtils.encodeURIComponent(message)}\",\"loaded\":$printLoadHelp}".toByteArray()
+                "{\"name\":\"gameText\",\"text\":\"${EscapeUtils.encodeURIComponent(message)}\",\"loaded\":$printLoadHelp, \"players:\"${container.getPlayers()}}".toByteArray()
             );
             printLoadHelp = false
             buffer.clear()

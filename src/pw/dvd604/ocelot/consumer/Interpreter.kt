@@ -69,6 +69,8 @@ fun main() {
                     ui.printLoadHelp = true
                 }
 
+                gameContainer.addPlayer(jsonObject["player"] as String)
+
                 println(" - New game")
             } else {
                 //Game is running
@@ -79,6 +81,8 @@ fun main() {
                     it.thread.interrupt()
                     it.ui.lastDelivery = delivery
                     it.lastPlayTime = Date().time
+
+                    it.addPlayer(jsonObject["player"] as String)
                 }
                 println(" - \"${inputText}\"")
             }
