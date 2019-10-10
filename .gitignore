@@ -23,3 +23,6 @@
 hs_err_pid*
 
 Z5.props
+zork1.z5
+*.z5Save
+*.iml

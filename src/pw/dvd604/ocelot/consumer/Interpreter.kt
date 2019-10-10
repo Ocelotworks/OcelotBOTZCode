@@ -1,4 +1,4 @@
-package pw.dvd604.ocelot
+package pw.dvd604.ocelot.consumer
 
 import com.rabbitmq.client.CancelCallback
 import com.rabbitmq.client.ConnectionFactory
@@ -13,8 +13,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 private val connectionFactory = ConnectionFactory()
-private val games = ArrayList<Game>(0)
+val games = ArrayList<Game>(0)
 private var rabbitURL = ""
+private val timer = TimerThread()
 
 fun main() {
     val props = Properties()
@@ -32,6 +33,7 @@ fun main() {
     try {
         val connection = connectionFactory.newConnection()
         val channel = connection.createChannel()
+        timer.start()
 
         channel.queueDeclare("z5", false, false, false, null)
         println(" [*] Waiting for messages.")
@@ -41,16 +43,31 @@ fun main() {
             val serverID = jsonObject["server"] as String
             print("Got message from $serverID")
 
+            getGame(serverID)?.let {
+                if(it.canDestroy){
+                    games.remove(it)
+                }
+            }
+
             if (getGame(serverID) == null) {
                 val ui = RPCInterface()
                 ui.channel = channel
                 ui.lastDelivery = delivery
                 ui.id = serverID
                 val cpu = ZCPU(ui)
-                cpu.initialize("C:/Users/Neil/Desktop/zork1.z5")
+                cpu.initialize("zork1.z5")
+                ui.loadGame = File("$serverID.z5Save").exists()
 
-                val gameContainer = Game(serverID, ui, cpu, cpu.start())
+                val gameContainer = Game(serverID, ui, cpu, cpu.start(), Date().time)
                 games.add(gameContainer)
+
+                if(ui.loadGame){
+                    gameContainer.ui.text = "restore"
+                    gameContainer.ui.buffer.clear()
+                    ui.loadGame = false
+                    gameContainer.thread.interrupt()
+                    ui.printLoadHelp = true
+                }
 
                 println(" - New game")
             } else {
@@ -61,6 +78,7 @@ fun main() {
                     it.ui.text = inputText
                     it.thread.interrupt()
                     it.ui.lastDelivery = delivery
+                    it.lastPlayTime = Date().time
                 }
                 println(" - \"${inputText}\"")
             }

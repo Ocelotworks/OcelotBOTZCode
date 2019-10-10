@@ -1,19 +1,18 @@
-package pw.dvd604.ocelot
+package pw.dvd604.ocelot.consumer
 
 import com.rabbitmq.client.*
 import com.zaxsoft.zax.zmachine.ZUserInterface
+import pw.dvd604.ocelot.util.EscapeUtils
 import java.awt.Dimension
 import java.awt.Point
-import java.lang.Exception
 import java.lang.StringBuilder
-import java.net.URLEncoder
 import java.util.*
 
 
 class RPCInterface : ZUserInterface {
 
-    lateinit var callback: (text: String) -> Unit
-    var isWriting = true
+    var printLoadHelp: Boolean = false
+    var loadGame: Boolean = false
     var text: String = ""
     var lastDelivery: Delivery? = null
     lateinit var channel: Channel
@@ -45,7 +44,8 @@ class RPCInterface : ZUserInterface {
     }
 
     override fun showString(string: String?) {
-        buffer.append(string)
+        if(!loadGame)
+            buffer.append(string)
     }
 
     override fun getFilename(title: String?, suggested: String?, saveFlag: Boolean): String { return "$id.z5Save" }
@@ -62,8 +62,9 @@ class RPCInterface : ZUserInterface {
                 "",
                 it.properties.replyTo,
                 props,
-                "{\"name\":\"gameText\",\"text\":\"${EscapeUtils.encodeURIComponent(message)}\"}".toByteArray()
+                "{\"name\":\"gameText\",\"text\":\"${EscapeUtils.encodeURIComponent(message)}\",\"loaded\":$printLoadHelp}".toByteArray()
             );
+            printLoadHelp = false
             buffer.clear()
             lastDelivery = null
             return true

@@ -1,4 +1,4 @@
-package pw.dvd604.ocelot;
+package pw.dvd604.ocelot.util;
 
 import java.io.UnsupportedEncodingException;
 import java.util.BitSet;
