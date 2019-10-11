@@ -37,7 +37,7 @@ fun main(args: Array<String>) {
 
         channel.queueDeclare("z5", false, false, false, null)
         println(" [*] Waiting for messages.")
-        channel.basicConsume("z5", true, DeliverCallback { consumerTag, delivery ->
+        channel.basicConsume("z5", true, DeliverCallback { _, delivery ->
             val message = String(delivery.body)
             val jsonObject: JSONObject = JSONParser().parse(message) as JSONObject
             val serverID = jsonObject["server"] as String

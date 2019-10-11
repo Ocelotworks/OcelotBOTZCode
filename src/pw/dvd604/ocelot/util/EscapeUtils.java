@@ -41,14 +41,6 @@ public final class EscapeUtils
     }
 
     /**
-     * A Utility class should not be instantiated.
-     */
-    private EscapeUtils()
-    {
-
-    }
-
-    /**
      * Escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )
      *
      * @param input
