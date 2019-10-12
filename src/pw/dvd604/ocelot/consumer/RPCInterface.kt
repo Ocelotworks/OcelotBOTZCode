@@ -19,13 +19,16 @@ class RPCInterface : ZUserInterface {
     var lastDelivery: Delivery? = null
     lateinit var channel: Channel
     var buffer = StringBuilder()
-    lateinit var id : String
+    lateinit var id: String
 
     override fun readLine(line: StringBuffer?, time: Int): Int {
         if (buffer.isNotEmpty()) sendMessage(buffer.toString())
 
-        while (!Thread.interrupted()) {
-        }
+        try {
+            while (!Thread.interrupted()) {
+                Thread.sleep(Long.MAX_VALUE)
+            }
+        } catch (e: InterruptedException) { }
 
         for (s in text) {
             line?.append(s)
@@ -39,18 +42,23 @@ class RPCInterface : ZUserInterface {
     override fun readChar(time: Int): Int {
         if (buffer.isNotEmpty()) sendMessage(buffer.toString())
 
-        while (!Thread.interrupted()) {
-        }
+        try {
+            while (!Thread.interrupted()) {
+                Thread.sleep(Long.MAX_VALUE)
+            }
+        } catch (e: Exception) { }
 
         return text[0].toInt()
     }
 
     override fun showString(string: String?) {
-        if(!loadGame)
+        if (!loadGame)
             buffer.append(string)
     }
 
-    override fun getFilename(title: String?, suggested: String?, saveFlag: Boolean): String { return "$id.z5Save" }
+    override fun getFilename(title: String?, suggested: String?, saveFlag: Boolean): String {
+        return "$id.z5Save"
+    }
 
     private fun sendMessage(message: String): Boolean {
         lastDelivery?.let {
@@ -65,7 +73,7 @@ class RPCInterface : ZUserInterface {
                 it.properties.replyTo,
                 props,
                 "{\"name\":\"gameText\",\"text\":\"${EscapeUtils.encodeURIComponent(message)}\",\"loaded\":$printLoadHelp, \"players\":${container.getPlayers()}}".toByteArray()
-            );
+            )
             printLoadHelp = false
             buffer.clear()
             lastDelivery = null
@@ -78,35 +86,65 @@ class RPCInterface : ZUserInterface {
 
     override fun setTerminatingCharacters(characters: Vector<*>?) {}
 
-    override fun hasStatusLine(): Boolean { return false }
+    override fun hasStatusLine(): Boolean {
+        return false
+    }
 
-    override fun hasUpperWindow(): Boolean { return false }
+    override fun hasUpperWindow(): Boolean {
+        return false
+    }
 
-    override fun defaultFontProportional(): Boolean { return false }
+    override fun defaultFontProportional(): Boolean {
+        return false
+    }
 
-    override fun hasColors(): Boolean { return false }
+    override fun hasColors(): Boolean {
+        return false
+    }
 
-    override fun hasBoldface(): Boolean { return true }
+    override fun hasBoldface(): Boolean {
+        return true
+    }
 
-    override fun hasItalic(): Boolean { return true }
+    override fun hasItalic(): Boolean {
+        return true
+    }
 
-    override fun hasFixedWidth(): Boolean { return false }
+    override fun hasFixedWidth(): Boolean {
+        return false
+    }
 
-    override fun hasTimedInput(): Boolean { return false }
+    override fun hasTimedInput(): Boolean {
+        return false
+    }
 
-    override fun getScreenCharacters(): Dimension { return Dimension(32, 32) }
+    override fun getScreenCharacters(): Dimension {
+        return Dimension(32, 32)
+    }
 
-    override fun getScreenUnits(): Dimension { return Dimension(32, 32) }
+    override fun getScreenUnits(): Dimension {
+        return Dimension(32, 32)
+    }
 
-    override fun getFontSize(): Dimension { return Dimension(32, 32) }
+    override fun getFontSize(): Dimension {
+        return Dimension(32, 32)
+    }
 
-    override fun getWindowSize(window: Int): Dimension { return Dimension(32, 32) }
+    override fun getWindowSize(window: Int): Dimension {
+        return Dimension(32, 32)
+    }
 
-    override fun getDefaultForeground(): Int { return 1 }
+    override fun getDefaultForeground(): Int {
+        return 1
+    }
 
-    override fun getDefaultBackground(): Int { return 1 }
+    override fun getDefaultBackground(): Int {
+        return 1
+    }
 
-    override fun getCursorPosition(): Point { return Point(0, 0) }
+    override fun getCursorPosition(): Point {
+        return Point(0, 0)
+    }
 
     override fun showStatusBar(s: String?, a: Int, b: Int, flag: Boolean) {}
 
