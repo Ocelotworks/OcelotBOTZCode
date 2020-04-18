@@ -11,5 +11,6 @@
     <orderEntry type="library" name="java" level="project" />
     <orderEntry type="library" name="com.rabbitmq:amqp-client:5.7.3" level="project" />
     <orderEntry type="library" name="com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" name="Simple Logging Facade for Java:1.7.28" level="project" />
   </component>
 </module>

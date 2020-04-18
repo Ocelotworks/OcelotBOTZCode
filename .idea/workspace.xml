@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="OcelotZ5Kotlin:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ee8149c-8c59-465e-ab4d-f41b1024bf20" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="4ee8149c-8c59-465e-ab4d-f41b1024bf20" name="Default Changelist" comment="Fix horrific CPU usage">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_rabbitmq_amqp_client_5_7_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/com_rabbitmq_amqp_client_5_7_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/322032568558026753.z5Save" beforeDir="false" afterPath="$PROJECT_DIR$/322032568558026753.z5Save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OcelotZ5Kotlin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OcelotZ5Kotlin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OcelotZ5Kotlin/META-INF/OcelotZ5Kotlin.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OcelotZ5Kotlin/META-INF/OcelotZ5Kotlin.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pw/dvd604/ocelot/consumer/Interpreter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/pw/dvd604/ocelot/consumer/Interpreter.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,35 +28,45 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RvfCHGVTJWzuO0N2FkQsiCZowx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/zax/src/jax.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="pw.dvd604.ocelot.consumer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Neil\IdeaProjects\OcelotZ5Kotlin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Neil\IdeaProjects\OcelotZ5Kotlin\src\pw\dvd604\ocelot\consumer" />
       <recent name="C:\Users\Neil\IdeaProjects\OcelotZ5Kotlin\src" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Kotlin.RPC">
     <configuration name="ZAX" type="Application" factoryName="Application">
@@ -61,7 +83,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="pw.dvd604.ocelot.InterpreterKt" />
+      <option name="MAIN_CLASS_NAME" value="pw.dvd604.ocelot.consumer.InterpreterKt" />
       <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -71,6 +93,18 @@
       <item itemvalue="Application.ZAX" />
       <item itemvalue="Kotlin.RPC" />
     </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -87,10 +121,98 @@
       <workItem from="1570557835938" duration="3426000" />
       <workItem from="1570636003138" duration="8811000" />
       <workItem from="1570722225718" duration="303000" />
+      <workItem from="1570722906117" duration="6907000" />
+      <workItem from="1570731087791" duration="205000" />
+      <workItem from="1570731348372" duration="167000" />
+      <workItem from="1570809200788" duration="1811000" />
+      <workItem from="1570866734340" duration="1230000" />
+      <workItem from="1570880691350" duration="647000" />
+      <workItem from="1572790400467" duration="125000" />
+      <workItem from="1587217057875" duration="1345000" />
     </task>
+    <task id="LOCAL-00001" summary="Add autosave and load">
+      <created>1570729106982</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570729106982</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add player tracking">
+      <created>1570730454996</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570730454996</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix malformed json in player tracking">
+      <created>1570731438625</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570731438625</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Change java build version and related edits">
+      <created>1570812773615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570812773615</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fix horrific CPU usage">
+      <created>1570867955807</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570867955807</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add autosave and load" />
+    <MESSAGE value="Add player tracking" />
+    <MESSAGE value="Fix malformed json in player tracking" />
+    <MESSAGE value="Change java build version and related edits" />
+    <MESSAGE value="Fix horrific CPU usage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix horrific CPU usage" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587217080453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/1920.-12.1600.1160/0.0.1920.1040/-1600.-12.1600.1160@0.0.1920.1040" timestamp="1587217080453" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1587217509307">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.-12.1600.1160/0.0.1920.1040/-1600.-12.1600.1160@0.0.1920.1040" timestamp="1587217509307" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1587217509307">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.-12.1600.1160/0.0.1920.1040/-1600.-12.1600.1160@0.0.1920.1040" timestamp="1587217509307" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1587217509307">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.-12.1600.1160/0.0.1920.1040/-1600.-12.1600.1160@0.0.1920.1040" timestamp="1587217509307" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1587217509307">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.-12.1600.1160/0.0.1920.1040/-1600.-12.1600.1160@0.0.1920.1040" timestamp="1587217509307" />
   </component>
 </project>

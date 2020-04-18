@@ -89,7 +89,9 @@ fun main(args: Array<String>) {
         }, CancelCallback { })
 
     } catch (e: Exception) {
-        println(e.localizedMessage)
+        println("An error occurred: ${e.message} \nSend Neil the stacktrace. Thanks")
+        e.printStackTrace()
+        e.cause?.printStackTrace()
     }
 }
 

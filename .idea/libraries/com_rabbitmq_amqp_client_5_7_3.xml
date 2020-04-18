@@ -7,7 +7,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ideaLibSources/amqp-client-5.7.3-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/rabbitmq/amqp-client/5.7.3/amqp-client-5.7.3-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
